@@ -96,7 +96,6 @@
 \allowdisplaybreaks
 \begin{document}
 \maketitle
-\newpage
 \tableofcontents
 \newpage
 
@@ -146,5 +145,49 @@ x = x_0 + f_x(P_0)t \\
 y = y_0 + f_y(P_0)t \\
 z = z_0 + f_z(P_0)t \\
 \end{align*}
+
+\newpage
+\section{Section 14.7}
+
+\subsection{Definitions of local maximums and minimums}
+If $f(x,y)$ is defined on a region $R$ containing the point $(a,b)$, then:
+\begin{enumerate}
+\item $f(a,b)$ is a \textbf{local maximum} value of $f$ if $f(a,b) \geq f(x,y)$ for all domain
+	points $(x,y)$ in an open disk centered at $(a,b)$.
+\item $f(a,b)$ is a \textbf{local minimum} value of $f$ if $f(a,b) \leq f(x,y)$ for all domain
+	points $(x,y)$ in an open disk centered at $(a,b)$.
+\end{enumerate}
+
+\subsection{First Derivative Test for Local Extreme Values}
+If all partial derivatives are equal to zero or undefined, then they are critical points.
+In order to find local extrema, you must set all partial derivatives to zero and solve the system
+of equations.
+
+\subsection{Second Derivative Test for Local Extreme Values}
+Let $D$ be the \textbf{discriminant} or \textbf{Hessian} of $f$ so that
+\begin{equation*}
+D = f_{xx}f_{yy} - f_{xy}^2
+\end{equation*}
+then 
+\begin{enumerate}
+\item $f$ has a \textbf{local maximum} at $(a,b)$ if $f_{xx} < 0$ and $D > 0$ at $(a,b)$.
+\item $f$ has a \textbf{local minimum} at $(a,b)$ if $f_{xx} > 0$ and $D > 0$ at $(a,b)$.
+\item $f$ has a \textbf{saddle point} at $(a,b)$ if $D < 0$ at $(a,b)$.
+\item \textbf{the test is inconclusive} at $(a,b)$ if $D = 0$ at $(a,b)$ and another method must be
+	in order to determine the behavior at $(a,b)$.
+\end{enumerate}
+
+\subsection{Finding Absolute Maxima and Minima on Closed Bounded Regions}
+In order to find absolute extrema for $f(x,y)$ on a closed and bounded region $R$, 
+\begin{enumerate}
+\item \textit{List the interior points of $R$} where $f$ may have local maxima or minima and 
+	evaluate $f$ at these points. These are critical points of $f$.
+\item \textit{List the boundary points of $R$} where $f$ has local maxima and minima and evaluate 
+	$f$ at these points. For every boundary, fix one or more of the variables in order to create a
+	function of a single variable and find its local maxima and minima. 
+\item \textit{Look through the lists} for the maximum and minimum values of $f$. These will be the
+	absolute maximum and minimum values of $f$ on $R$.
+
+\end{enumerate}
 
 \end{document}
