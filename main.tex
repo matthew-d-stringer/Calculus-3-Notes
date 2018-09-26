@@ -126,14 +126,46 @@ Lets say that $y_{max}$ is the maximum height, then:
 
 \section{Section 13.3}
 
-\subsection{Finding Tagent Vector to a Path}
-If $r(t)$ is the function for the path, then $r'(t)$ represents the tagent vector for the path.
+\subsection{Finding Tangent Vector to a Path}
+If $r(t)$ is the function for the path, then $r'(t)$ represents the tangent vector for the path.
 
 \subsection{Length of Path}
 If $r(t)$ is the function for the path and $D$ represents the length of the path from $t \in (t_0, t_1)$,
 then 
 \begin{equation*}
 	D = \int_{t_0}^{t_1} |r'(t)|dt
+\end{equation*}
+
+\section{Section 13.4}
+
+\subsection{Curvature}
+If $T$ is the tangent unit vector of a smooth curve, then the curvature of the curve is
+\begin{equation*}
+\kappa = \left| \frac{dT}{ds} \right|
+\end{equation*}
+where s is arc length.
+
+\subsection{Formula for Calculating Curvature}
+If $r(t)$ is a smooth curve, then curvature is 
+\begin{equation*}
+\kappa = \frac1{|v|} \cdot \left|\frac{dT}{dt}\right|
+\end{equation*}
+where 
+\begin{equation*}
+T = \frac{v}{|v|}
+\end{equation*}
+and $v = r'(t)$
+
+\subsection{Principal Unit Normal}
+At any point $\kappa \neq 0$, the principal unit normal vector for a curve is 
+\begin{equation*}
+N = \frac{1}{\kappa} \frac{dT}{ds}
+\end{equation*}
+
+\subsection{Formula for Calculating N}
+If $r(t)$ is a smooth curve, then the principal unit normal is
+\begin{equation*}
+N = \frac{\frac{dT}{dt}}{\left| \frac{dT}{dt} \right |}
 \end{equation*}
 
 \section{Section 14.6}
