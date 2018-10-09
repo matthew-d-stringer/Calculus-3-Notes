@@ -146,13 +146,14 @@ If $T$ is the tangent unit vector of a smooth curve, then the curvature of the c
 where s is arc length.
 
 \subsection{Formula for Calculating Curvature}
-If $r(t)$ is a smooth curve, then curvature is 
+If $s(t)$ is a smooth curve, then curvature is 
 \begin{equation*}
-\kappa = \frac1{|v|} \cdot \left|\frac{dT}{dt}\right|
+%\kappa = \frac1{|s'(t)|} \cdot \left|\frac{dT}{dt}\right|
+\kappa = \left| \frac{\frac{dT}{dt}}{\frac{ds}{dt}} \right|
 \end{equation*}
 where 
 \begin{equation*}
-T = \frac{v}{|v|}
+T = \frac{s'(t)}{|s'(t)|}
 \end{equation*}
 and $v = r'(t)$
 
@@ -166,6 +167,22 @@ N = \frac{1}{\kappa} \frac{dT}{ds}
 If $r(t)$ is a smooth curve, then the principal unit normal is
 \begin{equation*}
 N = \frac{\frac{dT}{dt}}{\left| \frac{dT}{dt} \right |}
+\end{equation*}
+
+\section{Section 13.5}
+
+\subsection{Acceleration Vector}
+If the acceleration vector is 
+\begin{equation*}
+a = a_T T + a_N N
+\end{equation*}
+then 
+\begin{equation*}
+a_T = s''(t) = \frac{d}{dt} |s'(t)| \text{ and } a_N = \kappa \left( \frac{ds}{dt} \right)^2 = \kappa |s'(t)|^2
+\end{equation*}
+also
+\begin{equation*}
+a_N = \sqrt{|a|^2 - a_T^2}
 \end{equation*}
 
 \section{Section 14.6}
