@@ -191,6 +191,30 @@ also
 a_N = \sqrt{|s''(t)|^2 - a_T^2}
 \end{equation*}
 
+\subsection{Torsion}
+\begin{equation*}
+\frac{dB}{ds} = \frac{d(T \times N)}{ds} = \frac{dT}{ds} \times N + T \times \frac{dN}{ds}
+\end{equation*}
+Since $N$ has the same direction as $\frac{dT}{ds}$, $N \times \frac{dT}{ds} = 0$
+\begin{equation*}
+\frac{dB}{ds} = T \times \frac{dN}{ds}
+\end{equation*}
+Because $\frac{dB}{ds}$ is orthogonal to $B$ and $T$, it must be parallel to $N$. Therefore, 
+$\frac{dB}{ds}$ is a scalar multiple of $N$ and 
+\begin{equation*}
+\frac{dB}{ds} = -\tau N
+\end{equation*}
+where $\tau$ is called the \textit{torsion} of the curve. Note that 
+\begin{equation*}
+\frac{dB}{ds} \cdot N = -\tau N \cdot N = -\tau
+\end{equation*}
+
+\subsection{Calculating Torsion}
+If $B = T \times N$, the torsion of a smooth curve is 
+\begin{equation*}
+\tau = - \frac{dB}{ds} \cdot N
+\end{equation*}
+
 \section{Section 14.6}
 
 \subsection{Standard Linear Approximation}
