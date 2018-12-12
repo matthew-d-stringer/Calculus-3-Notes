@@ -95,13 +95,66 @@
 
 \newcommand{\ihat}{\hat \i}
 \newcommand{\jhat}{\hat \j}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
 
 % Anything above the \begin{document} is the template. If you wish to start a new document using this template, erase everything inside of the \begin{document}...\end{document}
 \allowdisplaybreaks
 \begin{document}
 \maketitle
+\href{https://ocw.mit.edu/courses/mathematics/18-02sc-multivariable-calculus-fall-2010/index.htm}{\textbf{Course Page}}
 \tableofcontents
 \newpage
+
+\section{Chapter 12}
+
+\subsection{Component form of a vector}
+The component form of $\vec{PQ}$ where both $P$ and $Q$ are defined is 
+\begin{equation*}
+	Q-P
+\end{equation*}
+
+\subsection{Vector projection}
+The projection of a vector $u$ onto $v$ is 
+\begin{equation*}
+	\text{proj}_v u = \left( \frac{u \cdot v}{|v|^2} \right)v
+\end{equation*}
+The component of the projection is 
+\begin{equation*}
+	|u|\cos(\theta) = \frac{u \cdot v}{|v|}
+\end{equation*}
+
+\subsection{Area of a Parallelogram/Triangle}
+Let a parallelogram or triangle is defined with 3 points, $P$,$Q$, and $R$.
+Also let $A_p$ be the area of a parallelogram and $A_t$ be the area of a triangle.
+\begin{equation*}
+	A_p = | \vec{PQ} \times \vec{PR} |
+\end{equation*}
+\begin{equation*}
+	A_t = \frac{A_p}{2} = \frac{|\vec{PQ} \times \vec{PR}|}{2}
+\end{equation*}
+
+\subsection{Distance from point to line}
+Let $P$ be a reference point on the line, $S$ be a point off of the line, and let $v$ be a vector 
+parallel to the line.
+Also let the distance between the line and $S$ be $d$.
+\begin{equation*}
+	d = \frac{|\vec{PS} \times v|}{|v|}
+\end{equation*}
+
+\subsection{Angle between 2 vectors}
+\begin{equation*}
+	\theta = \cos^{-1} \left( \frac{u \cdot v}{|u||v|} \right)
+\end{equation*}
+
+\subsection{Angle between 2 planes}
+The vector normal to a plane is equivalent to the coefficients of $x$, $y$, and $z$.
+Then just find the angle between the two normal vectors
+
+\subsection{Work}
+The work done with force vector $F$ and distance vector $d$ is 
+\begin{equation*}
+	W = F \cdot d
+\end{equation*}
 
 \section{Section 13.2}
 
@@ -217,6 +270,16 @@ where $\tau$ is called the \textit{torsion} of the curve. Note that
 If $B = T \times N$, the torsion of a smooth curve is 
 \begin{equation*}
 \tau = - \frac{dB}{ds} \cdot N
+\end{equation*}
+also, 
+\begin{equation*}
+\tau = \frac{
+	\begin{vmatrix}
+	\dot x & \dot y & \dot z \\
+	\ddot x & \ddot y & \ddot z \\
+	\dddot x & \dddot y & \dddot z \\
+	\end{vmatrix}
+}{| v \times a |^2}
 \end{equation*}
 
 \section{Section 13.6}
@@ -376,5 +439,113 @@ In order to find absolute extrema for $f(x,y)$ on a closed and bounded region $R
 \item \textit{Look through the lists} for the maximum and minimum values of $f$. These will be the
 	absolute maximum and minimum values of $f$ on $R$.
 \end{enumerate}
+
+\section{Section 14.8}
+Using Lagrange multipliers, you can find extreme values of a function whose domain is constrained to
+lie within a subset of a plane.
+
+\subsection{Lagrange Multipliers}
+If you have two functions, $f(x,y)$ and $g(x,y) = c$, you can find extreme values of $f$ on $g(x,y) = c$ by finding
+locations where $\nabla f = \lambda \nabla g$. $\lambda$ is the Lagrange Multiplier. 
+
+\section{Section 14.9}
+
+\subsection{Local Linearization}
+The linearization of a function at the point $(x_0, y_0)$ is 
+\begin{equation*}
+	L(x,y) = f(x_0, y_0) + f_x(x_0, y_0)(x - x_0) + f_y(x_0, y_0)(y - y_0)
+\end{equation*}
+If $\vect{x_0} = (x_0, y_0)$ and $\vect{x} = (x,y)$,
+\begin{equation*}
+	L(\vect{x}) = f(\vect{x_0}) + \nabla f \cdot (\vect{x} - \vect{x_0})
+\end{equation*}
+
+\subsection{Quadratic Approximation}
+The approximation of a function at the point $(x_0, y_0)$ is 
+\begin{align*}
+	Q(x,y) = &f(x_0, y_0) + f_x(x_0, y_0)(x-x_0) + f_y(x_0, y_0)(y-y_0) \\
+	& + \frac12 f_{xx}(x_0, y_0)(x-x_0)^2 + f_{xy}(x_0, y_0)(x-x_0)(y-y_0) + \frac12 f_{yy}(x_0, y_0)(y-y_0)^2
+\end{align*}
+
+\subsubsection{Hessian Matrix}
+Let $f$ be a function of $(x,y)$
+\begin{equation*}
+	\vect{H} = 
+	\begin{bmatrix}
+		f_{xx} & f_{xy} \\
+		f_{yx} & f_{yy} 
+	\end{bmatrix}
+\end{equation*}
+
+\subsubsection{Representing Quadratic Forms with vectors}
+\begin{equation*}
+ax^2 + 2bxy + cy^2 = 
+\begin{bmatrix}
+x & y
+\end{bmatrix}
+\begin{bmatrix}
+a & b \\
+b & c
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+\end{equation*}
+You can also let 
+\begin{equation*}
+\vect{A} = 
+\begin{bmatrix}
+a & b \\
+b & c
+\end{bmatrix}
+\end{equation*}
+and 
+\begin{equation*}
+\vect{X} = 
+\begin{bmatrix}
+x \\
+y
+\end{bmatrix}
+\end{equation*}
+to get 
+\begin{equation*}
+ax^2 + 2bxy + cy^2 = \vect{X}^T \vect{A} \vect{X}
+\end{equation*}
+
+\subsubsection{Vector form of Quadratic Approximation}
+Let $X = \begin{bmatrix} x \\ y \end{bmatrix} $ and $X_0 = \begin{bmatrix} x_0 \\ y_0 \end{bmatrix} $
+\begin{equation*}
+	Q(X) = f(X_0) + \nabla f \cdot (X - X_0) + \frac12 (X - X_0)^T \vect{H}_{X_0} (X - X_0)
+\end{equation*}
+
+
+\section{Chapter 15 Double Integral}
+
+\subsection{Definition of the Double Integral}
+Double Integral = volume below the graph $z = f(x,y)$ over a region $R$ in xy-plane.
+\begin{equation*}
+	\int \int_R f(x,y)dA
+\end{equation*}
+\textbf{Definition: } Cut R into small pieces of area $\Delta A$
+Lets divide the region $R$ into $i$ x and y components
+The height of each rectangular prism is $f(x_i, y_i)$ and the area of the region underneath is $\Delta A_i$
+\begin{equation*}
+	\sum_i f(x_i,y_i) \Delta A_i 
+\end{equation*}
+Finally, you get take the limit as $\Delta A_i \to 0$ to get the double integral.
+
+\subsection{Calculating the Double Integral}
+To compute the double integral, take \textbf{slices}. 
+Let $S(x)$ = area of slice by plane parallel to the yz-plane.
+Then, 
+\begin{align*}
+	\text{volume} = \int_{x_{min}}^{x_{max}} S(x)dx. \\
+	S(x) = \int_{y_{min}(x)}^{y_{max}(x)} f(x,y)dy \\
+	{\bf \text{Finally, } \int \int_R f(x,y) dA = \int_{x_{min}}^{x_{max}} \left[ \int_{y_{min}(x)}^{y_{max}(x)} f(x,y) dy \right] dx}
+\end{align*}
+This is called an \textbf{Iterated Integral} because one integral is integrated over the next.
+BTW: $dA$ becomes $dy \cdot dx$ because $dA$ is the area of each infinitesimal rectangle which equals $dy \cdot dx$
+\newline Left off \href{https://youtu.be/YP_B0AapU0c?t=2148}{here}
 
 \end{document}
