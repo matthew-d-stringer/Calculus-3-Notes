@@ -548,7 +548,7 @@ This is called an \textbf{Iterated Integral} because one integral is integrated 
 BTW: $dA$ becomes $dy \cdot dx$ because $dA$ is the area of each infinitesimal rectangle which equals $dy \cdot dx$
 
 \subsection{Double Integral in Polar Coordinate}
-Slices of cirlces on the polar coordinate plane are approximately rectangles when they are very tiny. Therefore,
+Slices of circles on the polar coordinate plane are approximately rectangles when they are very tiny. Therefore,
 \begin{equation*}
 	\Delta A \approx \Delta r \Delta \theta
 \end{equation*}
@@ -556,7 +556,7 @@ and therefore,
 \begin{equation*}
 	dA = dr d\theta
 \end{equation*}
-If you have the funciton $f(\theta,r)$, then in order to find the volume under the curve, use the formula
+If you have the function $f(\theta,r)$, then in order to find the volume under the curve, use the formula
 \begin{equation*}
 	V = \int \int_R rf(\theta,r) dA
 \end{equation*}
@@ -576,6 +576,16 @@ If you have the funciton $f(\theta,r)$, then in order to find the volume under t
 	\begin{align*}
 		\bar f = \frac1{\text{Area}} \int \int_R f dA
 	\end{align*}
+	Weighted average of $f$ with density $\delta$: 
+	\begin{equation*}
+		\frac1{\text{Mass}(R)} \int \int_R f \delta dA
+	\end{equation*}
+	\item Center of Mass of a (planar) object (with density $\delta$)? \newline
+		Center of mass is at $(\bar x, \bar y)$ where 
+		\begin{align*}
+			\bar x = \frac1{\text{Mass}} \int \int_R x \delta dA \\
+			\bar y = \frac1{\text{Mass}} \int \int_R y \delta dA \\
+		\end{align*}
 \end{enumerate}
 
 \href{https://youtu.be/60e4hdCi1D4?t=1308}{\bf Left off here}
