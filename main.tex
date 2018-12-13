@@ -546,6 +546,38 @@ Then,
 \end{align*}
 This is called an \textbf{Iterated Integral} because one integral is integrated over the next.
 BTW: $dA$ becomes $dy \cdot dx$ because $dA$ is the area of each infinitesimal rectangle which equals $dy \cdot dx$
-\newline Left off \href{https://youtu.be/YP_B0AapU0c?t=2148}{here}
+
+\subsection{Double Integral in Polar Coordinate}
+Slices of cirlces on the polar coordinate plane are approximately rectangles when they are very tiny. Therefore,
+\begin{equation*}
+	\Delta A \approx \Delta r \Delta \theta
+\end{equation*}
+and therefore, 
+\begin{equation*}
+	dA = dr d\theta
+\end{equation*}
+If you have the funciton $f(\theta,r)$, then in order to find the volume under the curve, use the formula
+\begin{equation*}
+	V = \int \int_R rf(\theta,r) dA
+\end{equation*}
+
+\subsection{Applications of Double Integrals}
+\begin{enumerate}
+	\item Find area of a region $R$
+	\begin{equation*}
+		A = \int \int_R 1 dA 
+	\end{equation*}
+	\item Finding mass of a flat object with density $\delta = $mass per unit area
+	\begin{align*}
+		\Delta m = \delta \Delta A \\
+		m = \int \int_R \delta dA
+	\end{align*}
+	\item Finding average value of $f$ in region $R$
+	\begin{align*}
+		\bar f = \frac1{\text{Area}} \int \int_R f dA
+	\end{align*}
+\end{enumerate}
+
+\href{https://youtu.be/60e4hdCi1D4?t=1308}{\bf Left off here}
 
 \end{document}
