@@ -1,0 +1,78 @@
+\documentclass[../main.tex]{subfiles}
+% !TEX root = ../main.tex
+
+\begin{document}
+\section{Chapter 15 Double Integral}
+
+\subsection{Definition of the Double Integral}
+Double Integral = volume below the graph $z = f(x,y)$ over a region $R$ in xy-plane.
+\begin{equation*}
+	\int \int_R f(x,y)dA
+\end{equation*}
+\textbf{Definition: } Cut R into small pieces of area $\Delta A$
+Lets divide the region $R$ into $i$ x and y components
+The height of each rectangular prism is $f(x_i, y_i)$ and the area of the region underneath is $\Delta A_i$
+\begin{equation*}
+	\sum_i f(x_i,y_i) \Delta A_i 
+\end{equation*}
+Finally, you get take the limit as $\Delta A_i \to 0$ to get the double integral.
+
+\subsection{Calculating the Double Integral}
+To compute the double integral, take \textbf{slices}. 
+Let $S(x)$ = area of slice by plane parallel to the yz-plane.
+Then, 
+\begin{align*}
+	\text{volume} = \int_{x_{min}}^{x_{max}} S(x)dx. \\
+	S(x) = \int_{y_{min}(x)}^{y_{max}(x)} f(x,y)dy \\
+	{\bf \text{Finally, } \int \int_R f(x,y) dA = \int_{x_{min}}^{x_{max}} \left[ \int_{y_{min}(x)}^{y_{max}(x)} f(x,y) dy \right] dx}
+\end{align*}
+This is called an \textbf{Iterated Integral} because one integral is integrated over the next.
+BTW: $dA$ becomes $dy \cdot dx$ because $dA$ is the area of each infinitesimal rectangle which equals $dy \cdot dx$
+
+\subsection{Double Integral in Polar Coordinate}
+Slices of circles on the polar coordinate plane are approximately rectangles when they are very tiny. Therefore,
+\begin{equation*}
+	\Delta A \approx \Delta r \Delta \theta
+\end{equation*}
+and therefore, 
+\begin{equation*}
+	dA = dr d\theta
+\end{equation*}
+If you have the function $f(\theta,r)$, then in order to find the volume under the curve, use the formula
+\begin{equation*}
+	V = \int \int_R rf(\theta,r) dA
+\end{equation*}
+
+\subsection{Applications of Double Integrals}
+\begin{enumerate}
+	\item Find area of a region $R$
+	\begin{equation*}
+		A = \int \int_R 1 dA 
+	\end{equation*}
+	\item Finding mass of a flat object with density $\delta = $mass per unit area
+	\begin{align*}
+		\Delta m = \delta \Delta A \\
+		m = \int \int_R \delta dA
+	\end{align*}
+	\item Finding average value of $f$ in region $R$
+	\begin{align*}
+		\bar f = \frac1{\text{Area}} \int \int_R f dA
+	\end{align*}
+	Weighted average of $f$ with density $\delta$: 
+	\begin{equation*}
+		\frac1{\text{Mass}(R)} \int \int_R f \delta dA
+	\end{equation*}
+	\item Center of Mass of a (planar) object (with density $\delta$)? \newline
+		Center of mass is at $(\bar x, \bar y)$ where 
+		\begin{align*}
+			\bar x = \frac1{\text{Mass}} \int \int_R x \delta dA \\
+			\bar y = \frac1{\text{Mass}} \int \int_R y \delta dA \\
+		\end{align*}
+	\item Moment of inertia of an object about the origin
+		\begin{equation*}
+			\int \int_R r^2 \delta \; dA = \int \int_R (x^2 + y^2) \delta \; dA
+		\end{equation*}
+\end{enumerate}
+
+\href{https://youtu.be/60e4hdCi1D4?t=1308}{\bf Left off here}
+\end{document}

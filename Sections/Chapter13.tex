@@ -1,0 +1,212 @@
+\documentclass[../main.tex]{subfiles}
+% !TEX root = ../main.tex
+
+\begin{document}
+
+\section{Section 13.2}
+
+\subsection{Ideal Projectile Motion}
+If $v_0$ makes an angle $\alpha$ with the horizon, then 
+\begin{equation*}
+v_0 = (|v_0|\cos \alpha){\ihat} + (|v_0|\sin \alpha){\jhat}
+\end{equation*}
+Also, assume $r_0 = 0{\ihat} + 0{\hat \j}$. With these formulas it can be derived that
+\begin{equation*}
+r(t) = -\frac12 gt^2 {\hat \j} + v_0t
+\end{equation*}
+
+\subsubsection{Range of a Projectile}
+\begin{equation*}
+R = \frac{v_0^2}{g} \sin (2\alpha)
+\end{equation*}
+Where $R$ is the range, $v_0$ is the initial velocity, $g$ is acceleration due to gravity, and 
+$\alpha$ is the launch angle
+
+\subsubsection{Maximum Height of a Projectile}
+Lets say that $y_{max}$ is the maximum height, then:
+\begin{equation*}
+	y_{max} = \frac{v_0 \sin \alpha}{2g}
+\end{equation*}
+
+\section{Section 13.3}
+
+\subsection{Finding Tangent Vector to a Path}
+If $r(t)$ is the function for the path, then $r'(t)$ represents the tangent vector for the path.
+
+\subsection{Length of Path}
+If $r(t)$ is the function for the path and $D$ represents the length of the path from $t \in (t_0, t_1)$,
+then 
+\begin{equation*}
+	D = \int_{t_0}^{t_1} |r'(t)|dt
+\end{equation*}
+
+\section{Section 13.4}
+
+\subsection{Curvature}
+If $T$ is the tangent unit vector of a smooth curve, then the curvature of the curve is
+\begin{equation*}
+\kappa = \left| \frac{dT}{ds} \right|
+\end{equation*}
+where s is arc length.
+
+\subsection{Formula for Calculating Curvature}
+If $s(t)$ is a smooth curve, then curvature is 
+\begin{equation*}
+%\kappa = \frac1{|s'(t)|} \cdot \left|\frac{dT}{dt}\right|
+\kappa = \left| \frac{\frac{dT}{dt}}{\frac{ds}{dt}} \right|
+\end{equation*}
+where 
+\begin{equation*}
+T = \frac{s'(t)}{|s'(t)|}
+\end{equation*}
+and $v = r'(t)$
+
+\subsection{Principal Unit Normal}
+At any point $\kappa \neq 0$, the principal unit normal vector for a curve is 
+\begin{equation*}
+N = \frac{1}{\kappa} \frac{dT}{ds}
+\end{equation*}
+
+\subsection{Formula for Calculating N}
+If $r(t)$ is a smooth curve, then the principal unit normal is
+\begin{equation*}
+N = \frac{\frac{dT}{dt}}{\left| \frac{dT}{dt} \right |}
+\end{equation*}
+
+\section{Section 13.5}
+
+\subsection{Binormal Vector}
+The binormal vector ($B$) is a vector that is orthogonal to both $T$ and $N$. 
+\begin{equation*}
+B = T \times N 
+\end{equation*}
+
+\subsection{Acceleration Vector}
+If the acceleration vector is 
+\begin{equation*}
+a = a_T T + a_N N
+\end{equation*}
+then 
+\begin{equation*}
+a_T = s''(t) = \frac{d}{dt} |s'(t)| \text{ and } a_N = \kappa \left( \frac{ds}{dt} \right)^2 = \kappa |s'(t)|^2
+\end{equation*}
+also
+\begin{equation*}
+a_N = \sqrt{|s''(t)|^2 - a_T^2}
+\end{equation*}
+
+\subsection{Torsion}
+\begin{equation*}
+\frac{dB}{ds} = \frac{d(T \times N)}{ds} = \frac{dT}{ds} \times N + T \times \frac{dN}{ds}
+\end{equation*}
+Since $N$ has the same direction as $\frac{dT}{ds}$, $N \times \frac{dT}{ds} = 0$
+\begin{equation*}
+\frac{dB}{ds} = T \times \frac{dN}{ds}
+\end{equation*}
+Because $\frac{dB}{ds}$ is orthogonal to $B$ and $T$, it must be parallel to $N$. Therefore, 
+$\frac{dB}{ds}$ is a scalar multiple of $N$ and 
+\begin{equation*}
+\frac{dB}{ds} = -\tau N
+\end{equation*}
+where $\tau$ is called the \textit{torsion} of the curve. Note that 
+\begin{equation*}
+\frac{dB}{ds} \cdot N = -\tau N \cdot N = -\tau
+\end{equation*}
+
+\subsection{Calculating Torsion}
+If $B = T \times N$, the torsion of a smooth curve is 
+\begin{equation*}
+\tau = - \frac{dB}{ds} \cdot N
+\end{equation*}
+also, 
+\begin{equation*}
+\tau = \frac{
+	\begin{vmatrix}
+	\dot x & \dot y & \dot z \\
+	\ddot x & \ddot y & \ddot z \\
+	\dddot x & \dddot y & \dddot z \\
+	\end{vmatrix}
+}{| v \times a |^2}
+\end{equation*}
+
+\section{Section 13.6}
+\subsection{Motion in Polar and Cylindrical Coordinates}
+When a particle at $P(r,\theta)$ moves along a curve in the polar coordinate plane, we express its
+position in terms of moving unit vectors:
+\begin{equation*}
+u_r = (\cos \theta) \ihat + (\sin \theta) \jhat \quad u_\theta = -(\sin \theta)\ihat + (\cos \theta)\jhat
+\end{equation*}
+where $u_r$ is tangent to the vector $\begin{bmatrix} \theta \\ r \end{bmatrix}$ and $u_\theta$ is 
+normal to it. When we differentiate $u_r$ and $u_\theta$ with respect to $t$, we can see how they 
+change with time.
+\begin{equation*}
+\dot u_r = (-\dot{\theta}\sin \theta) \ihat + (\dot{\theta}\cos \theta) \jhat \quad 
+u_\theta = -(\dot{\theta}\sin \theta) \ihat - (\dot{\theta}\sin \theta) \jhat
+\end{equation*}
+which equals 
+\begin{equation*}
+\dot u_r = \dot{\theta} u_\theta \quad u_\theta = -\dot{\theta} u_r
+\end{equation*}
+
+\subsection{Polar Velocity Vector}
+\begin{equation*}
+v = \dot r = \frac{d}{dt} \left( r u_r \right) = \dot r u_r + r \dot u_r = \dot r u_r + r \dot \theta u_\theta
+\end{equation*}
+
+\subsection{Polar Acceleration Vector}
+\begin{equation*}
+a = \dot v = (\ddot r u_r + \dot r \dot u_r) + 
+(\dot r \dot \theta u_\theta + r \ddot \theta u_\theta + r \dot \theta \dot u_\theta)
+\end{equation*}
+which becomes 
+\begin{equation*}
+a = (\ddot r - r \dot \theta^2)u_r + (r \ddot \theta + 2 \dot r \dot \theta) u_\theta
+\end{equation*}
+
+\subsection{Planet Movement}
+If $r$ is the radius vector from the center of a sun of mass $M$ to the center of a planet of mass $m$,
+then the force $F$ of the gravitational attraction between the planet and the sun is:
+\begin{equation*}
+F = - \frac{GmM}{|r|^2} \frac{r}{|r|}
+\end{equation*}
+where $G$ is the universal gravitational constant. 
+\begin{equation*}
+G = 6.6726 \times 10^{-11} \si{\newton \meter^2 \kilogram^{-2}}
+\end{equation*}
+By using Newton's second law, we can find
+\begin{equation*}
+\ddot r = - \frac{GM}{|r|^2} \frac{r}{|r|}
+\end{equation*}
+Because $\ddot r$ is a scalar multiple of $r$, we know 
+\begin{equation*}
+r \times \ddot r = 0
+\end{equation*}
+so we know
+\begin{equation*}
+\frac{d}{dt} (r \times \dot r) = \dot r \times \dot r + r \times \ddot r = r \times \ddot r = 0
+\end{equation*}
+meaning that the cross between $r$ and $\dot r$ is constant
+\begin{equation*}
+r \times \dot r = C
+\end{equation*}
+
+\subsection{Kepler's First Law}
+The eccentricity of the ellipse that the planet follows is 
+\begin{equation*}
+e = \frac{r_0 v_0^2}{GM} - 1
+\end{equation*}
+and the polar equation is 
+\begin{equation*}
+r = \frac{(1+e)r_0}{1+e \cos \theta}
+\end{equation*}
+where $r_0$ is the minimum distance from the sun. The sun's mass $M$ is 
+$1.99 \times 10^{30} \si{ \kilogram}$
+
+\subsection{Kepler's Third Law}
+The time $T$ it takes a planet to go around its sun once is the planet's orbital period. Kepler's
+Third Law says that and the orbit's semimajor axis $a$ are related by
+\begin{equation*}
+\frac{T^2}{a^3} = \frac{4\pi^2}{GM}
+\end{equation*}
+
+\end{document}

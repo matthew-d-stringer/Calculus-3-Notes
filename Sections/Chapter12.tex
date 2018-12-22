@@ -1,0 +1,57 @@
+\documentclass[../main.tex]{subfiles}
+% !TEX root = ../main.tex
+
+\begin{document}
+
+\section{Chapter 12}
+
+\subsection{Component form of a vector}
+The component form of $\vec{PQ}$ where both $P$ and $Q$ are defined is 
+\begin{equation*}
+	Q-P
+\end{equation*}
+
+\subsection{Vector projection}
+The projection of a vector $u$ onto $v$ is 
+\begin{equation*}
+	\text{proj}_v u = \left( \frac{u \cdot v}{|v|^2} \right)v
+\end{equation*}
+The component of the projection is 
+\begin{equation*}
+	|u|\cos(\theta) = \frac{u \cdot v}{|v|}
+\end{equation*}
+
+\subsection{Area of a Parallelogram/Triangle}
+Let a parallelogram or triangle is defined with 3 points, $P$,$Q$, and $R$.
+Also let $A_p$ be the area of a parallelogram and $A_t$ be the area of a triangle.
+\begin{equation*}
+	A_p = | \vec{PQ} \times \vec{PR} |
+\end{equation*}
+\begin{equation*}
+	A_t = \frac{A_p}{2} = \frac{|\vec{PQ} \times \vec{PR}|}{2}
+\end{equation*}
+
+\subsection{Distance from point to line}
+Let $P$ be a reference point on the line, $S$ be a point off of the line, and let $v$ be a vector 
+parallel to the line.
+Also let the distance between the line and $S$ be $d$.
+\begin{equation*}
+	d = \frac{|\vec{PS} \times v|}{|v|}
+\end{equation*}
+
+\subsection{Angle between 2 vectors}
+\begin{equation*}
+	\theta = \cos^{-1} \left( \frac{u \cdot v}{|u||v|} \right)
+\end{equation*}
+
+\subsection{Angle between 2 planes}
+The vector normal to a plane is equivalent to the coefficients of $x$, $y$, and $z$.
+Then just find the angle between the two normal vectors
+
+\subsection{Work}
+The work done with force vector $F$ and distance vector $d$ is 
+\begin{equation*}
+	W = F \cdot d
+\end{equation*}
+
+\end{document}
