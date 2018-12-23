@@ -7,7 +7,7 @@
 \subsection{Definition of the Double Integral}
 Double Integral = volume below the graph $z = f(x,y)$ over a region $R$ in xy-plane.
 \begin{equation*}
-	\int \int_R f(x,y)dA
+	\iint_R f(x,y)dA
 \end{equation*}
 \textbf{Definition: } Cut R into small pieces of area $\Delta A$
 Lets divide the region $R$ into $i$ x and y components
@@ -24,7 +24,7 @@ Then,
 \begin{align*}
 	\text{volume} = \int_{x_{min}}^{x_{max}} S(x)dx. \\
 	S(x) = \int_{y_{min}(x)}^{y_{max}(x)} f(x,y)dy \\
-	{\bf \text{Finally, } \int \int_R f(x,y) dA = \int_{x_{min}}^{x_{max}} \left[ \int_{y_{min}(x)}^{y_{max}(x)} f(x,y) dy \right] dx}
+	{\bf \text{Finally, } \iint_R f(x,y) dA = \int_{x_{min}}^{x_{max}} \left[ \int_{y_{min}(x)}^{y_{max}(x)} f(x,y) dy \right] dx}
 \end{align*}
 This is called an \textbf{Iterated Integral} because one integral is integrated over the next.
 BTW: $dA$ becomes $dy \cdot dx$ because $dA$ is the area of each infinitesimal rectangle which equals $dy \cdot dx$
@@ -40,39 +40,78 @@ and therefore,
 \end{equation*}
 If you have the function $f(\theta,r)$, then in order to find the volume under the curve, use the formula
 \begin{equation*}
-	V = \int \int_R rf(\theta,r) dA
+	V = \iint_R rf(\theta,r) dA
 \end{equation*}
 
 \subsection{Applications of Double Integrals}
 \begin{enumerate}
 	\item Find area of a region $R$
 	\begin{equation*}
-		A = \int \int_R 1 dA 
+		A = \iint_R 1 dA 
 	\end{equation*}
 	\item Finding mass of a flat object with density $\delta = $mass per unit area
 	\begin{align*}
 		\Delta m = \delta \Delta A \\
-		m = \int \int_R \delta dA
+		m = \iint_R \delta dA
 	\end{align*}
 	\item Finding average value of $f$ in region $R$
 	\begin{align*}
-		\bar f = \frac1{\text{Area}} \int \int_R f dA
+		\bar f = \frac1{\text{Area}} \iint_R f dA
 	\end{align*}
 	Weighted average of $f$ with density $\delta$: 
 	\begin{equation*}
-		\frac1{\text{Mass}(R)} \int \int_R f \delta dA
+		\frac1{\text{Mass}(R)} \iint_R f \delta dA
 	\end{equation*}
 	\item Center of Mass of a (planar) object (with density $\delta$)? \newline
 		Center of mass is at $(\bar x, \bar y)$ where 
 		\begin{align*}
-			\bar x = \frac1{\text{Mass}} \int \int_R x \delta dA \\
-			\bar y = \frac1{\text{Mass}} \int \int_R y \delta dA \\
+			\bar x = \frac1{\text{Mass}} \iint_R x \delta dA \\
+			\bar y = \frac1{\text{Mass}} \iint_R y \delta dA \\
 		\end{align*}
 	\item Moment of inertia of an object about the origin
 		\begin{equation*}
-			\int \int_R r^2 \delta \; dA = \int \int_R (x^2 + y^2) \delta \; dA
+			\iint_R r^2 \delta \; dA = \iint_R (x^2 + y^2) \delta \; dA
 		\end{equation*}
 \end{enumerate}
 
 \href{https://youtu.be/60e4hdCi1D4?t=1308}{\bf Left off here}
+
+\subsection{Triple Integrals}
+\begin{itemize}
+    \item Really similar to double integrals
+    \item Finds the summation of volumes of a 3 dimensional region
+\end{itemize}
+\begin{equation*}
+    \iiint_R f \; dV
+\end{equation*}
+
+\subsection{Applications of Triple Integrals}
+\begin{itemize}
+    \item Mass
+        \begin{equation*}
+            \text{Mass} = \iint_R \delta \; dV 
+        \end{equation*}
+    \item Average Value 
+        \begin{equation*}
+            \bar f = \frac1{\text{Vol}(R)} \iiint_R f \; dV
+        \end{equation*}
+        or with density: 
+        \begin{equation*}
+            \bar f = \frac1{\text{Mass}(R)} \iiint_R f \delta \; dV
+        \end{equation*}
+    \item Center of Mass: $(\bar x, \bar y, \bar z)$
+        \begin{align*}
+            \bar x = \frac1{\text{Mass}(R)} \iiint_R x \delta \; dV \\
+            \bar y = \frac1{\text{Mass}(R)} \iiint_R y \delta \; dV \\
+            \bar z = \frac1{\text{Mass}(R)} \iiint_R z \delta \; dV
+        \end{align*}
+    \item Moment of Inertia: 
+        \begin{align*}
+            \iiint_R (\text{distance to axis})^2 \delta \; dV \\
+			I_z = \iiint_R r^2 \delta \; dV = \iiint_R \delta (x^2 + y^2) \; dV \\
+			I_y = \iiint_R \delta (x^2 + z^2) \; dV \\
+			I_x = \iiint_R \delta (y^2 + z^2) \; dV \\
+        \end{align*}
+\end{itemize}
+
 \end{document}
